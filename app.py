@@ -52,12 +52,15 @@ def get_something():
     r = requests.get(url, params=parametres_all)
 
     data_json = r.json()
-    records = data_json['properties']['parameter']
+    try:
+      records = data_json['properties']['parameter']
 
-    df = pd.DataFrame.from_dict(records)
-    df.to_excel("output.xlsx")
-
-    return redirect('/')
+      df = pd.DataFrame.from_dict(records)
+      df.to_excel("output.xlsx")
+      return redirect('/')
+    except:
+      return data_json["messages"][0]
+    #return redirect('/')
 
 
 

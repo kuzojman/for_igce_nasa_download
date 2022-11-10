@@ -11,7 +11,7 @@ html,body {
     font-weight: bold;
   }
   .hero-body
-  {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Plum_trees_Kitano_Tenmangu.jpg/1200px-Plum_trees_Kitano_Tenmangu.jpg);
+  {background-image: url('/static/img/XXXL.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -65,3 +65,19 @@ html,body {
   .promo-block .container {
     margin: 1rem 5rem;
   }
+  
+.lat-lot-input {
+  display: flex;
+  flex-direction: row;
+  /*width: 60%;
+  justify-content: space-between;*/
+}
+.lat-lot-input .control:first-child {
+  margin-right: 25px;
+}
+.auth-form > div.control {
+  margin-bottom: 25px;
+}
+.auth-form > h1 {
+  margin-bottom: 10px;
+}

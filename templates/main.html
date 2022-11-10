@@ -31,48 +31,6 @@
                 <span></span>
                 </span>
             </div>
-            <div id="navbarMenu" class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item is-active">
-                            Home
-                        </a>
-                    <a class="navbar-item">
-                            Examples
-                        </a>
-                    <a class="navbar-item">
-                            Features
-                        </a>
-                    <a class="navbar-item">
-                            Team
-                        </a>
-                    <a class="navbar-item">
-                            Archives
-                        </a>
-                    <a class="navbar-item">
-                            Help
-                        </a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                                Account
-                            </a>
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                    Dashboard
-                                </a>
-                            <a class="navbar-item">
-                                    Profile
-                                </a>
-                            <a class="navbar-item">
-                                    Settings
-                                </a>
-                            <hr class="navbar-divider">
-                            <div class="navbar-item">
-                                Logout
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </nav>
     <!-- END NAV -->
@@ -80,7 +38,6 @@
     <section class="hero is-info is-medium is-bold">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>sed eiusmod tempor incididunt ut labore et dolore magna aliqua</h1>
             </div>
         </div>
     </section>
@@ -96,20 +53,33 @@
                         <div class="media">
                             <div class="media-content has-text-centered">
                                 <p class="title article-title">Introducing a new feature for paid subscribers</p>
-                                <div class="tags has-addons level-item">
-                                    <span class="tag is-rounded is-info">@skeetskeet</span>
-                                    <span class="tag is-rounded">May 10, 202X</span>
-                                </div>
                             </div>
                         </div>
                         <div class="content article-body">
+                            <div class="content">
+                            <!---- 
                             <p>Non arcu risus quis varius quam quisque. Dictum varius duis at consectetur lorem. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. </p>
                             <p>Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Accumsan lacus vel facilisis volutpat. Non sodales neque sodales ut etiam.
                                 Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus.</p>
                             <h3 class="has-text-centered">How to properly center tags in bulma?</h3>
-                            <p> Proper centering of tags in bulma is done with class: <pre>level-item</pre>
-                                Voluptat ut farmacium tellus in metus vulputate. Feugiat in fermentum posuere urna nec. Pharetra convallis posuere morbi leo urna molestie.
-                                Accumsan lacus vel facilisis volutpat est velit egestas. Fermentum leo vel orci porta. Faucibus interdum posuere lorem ipsum.</p>
+                            <p> 
+                                -->
+                                <h3 class="has-text-centered">Добрый день,уважаемые коллеги ФГБУ "ИГКЭ имени акамедика Ю.А. Израэля"</h3>
+                                <p>Данная страница создана для автоматического скачивания данных из NASA api. С помощью данного портала можно
+                                    делать автоматическую загрузку часовых,дневных и месячных данных в районе расположение станции с определенными координатами
+                                </p>
+                                <p>Данные, которые могут быть выгружены с данного портала:</p>
+                                
+                                <ol>
+                                    <li>T2M  - температура на высоте 2 м, град. С</li>
+                                    <li>RH2M - влажность на высоте 2 м, %</li>          
+                                    <li>U10M - направление ветра вдоль параллели с запада на восток на высоте 10 м, м/с</li>
+                                    <li>V10M - направление ветра вдоль меридиана с севера на юг на высоте 10 м, м/с</li>
+                                    <li>ALLSKY_SFC_SW_DNI - Прямое солнечное излучение, падающее на горизонтальную плоскость, перпендикулярную (перпендикулярную) направлению положения солнца при любых условиях неба., МДж/час</li>
+                                    <li>PRECTOTCORR - осадки, мм</li>
+                                </ol>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -118,44 +88,44 @@
                 
                 <div class="card article">
                     <div class="card-content">
-                        <form role="form" class="auth-form" action="/get_something" method="post">       
-                        <h1>Долгота</h1>
+                        <form role="form" class="auth-form" action="/get_something" method="post"> 
+                        <h1>Координаты исследуемой станции</h1>      
+                        <div class="lat-lot-input">
                           <div class="control">
+                            <h1>Долгота</h1>
                             <label class="label"> градусы,          минуты</label>
                             <div class="select" >
                               <select id="rec_mode" name="long_grad">
-                                <option>0</option>
                               </select>
                             </div>
                             <div class="select">
                                 <select id ='rec_mode_2' name="long_min">
-                                  <option>0</option>
                                 </select>
                               </div>
-                          </div>
-                          <h1>Широта</h1>
+                          </div>                          
                           <div class="control">
+                            <h1>Широта</h1>
                             <label class="label"> градусы,          минуты</label>
                             <div class="select" >
                               <select id="rec_mode_3" name="lat_grad">
-                                <option>0</option>
                               </select>
                             </div>
+                        
+                        
                             <div class="select">
                                 <select id ='rec_mode_4' name="lat_min">
-                                  <option>0</option>
                                 </select>
                               </div>
 
 
                           </div>
+                        </div>
 
-
-                          <h1>переменные</h1>
+                          
                           <div class="control">
-                            <label class="label"> градусы,          минуты</label>
-                            <div class="select is-multiple">
-                                <select multiple size="3"  id ='rec_mode_9' name="variables" >
+                            <label class="label"> Данные, выгружаемые из портала</label>
+                            <div class="select is-multiple" style="width:100%">
+                                <select multiple size="3" style="width:100%" id ='rec_mode_9' name="variables" >
                                   <option>T2M</option>
                                   <option>RH2M</option>                                  
                                   <option>U10M</option>
