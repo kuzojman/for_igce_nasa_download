@@ -6,6 +6,9 @@ import re
 import pandas as pd
 import requests
 import openpyxl
+import numpy as np
+from datetime import timedelta
+
 
 class get_values_from_form(FlaskForm):
   long_grad = StringField("long_grad")
@@ -61,6 +64,47 @@ def get_something():
     except:
       return data_json["messages"][0]
     #return redirect('/')
+
+
+
+
+
+
+with app.app_context():
+  data_all = pd.read_excel('Mondi.xlsx', index_col=None, header=0)
+  result = {'number': np.arange(len(data_all['cloud'])*24)}
+  result = pd.DataFrame(result)
+  names_array = ['Tmean','Tmax','Tmin','humidity','v','Precipitation','cloud']
+
+  a = np.empty(24)
+  array_24 = []
+  one_array = data_all['date_to_model'].to_numpy()
+  for i in range(len(one_array)):
+    date_hour = [str(data_all['date_to_model'][i] + timedelta(hours=k)) for k in range(len(a))]
+    array_24 = np.append(array_24,date_hour)
+
+
+  result['date_to_model'] = array_24
+
+  a = np.empty(24)
+  array_24 = []
+
+  for j in names_array:
+    a = np.empty(24)
+    array_24 = []
+    one_array = data_all[j].to_numpy()
+    for i in range(len(one_array)):
+      if one_array[i]!= '?*':
+        a.fill(one_array[i])
+        array_24 = np.append(array_24,a)
+      else:
+        a.fill(10)
+        array_24 = np.append(array_24,a)
+
+    result[j] = array_24
+
+
+  print(result)
 
 
 
